@@ -45,8 +45,6 @@ class HashSetQuizTest {
         // 출력결과 예시:
         // apple
         // banana
-        // cherry
-        // elderberry
-        // fig
+zx        // ...
     }
 }

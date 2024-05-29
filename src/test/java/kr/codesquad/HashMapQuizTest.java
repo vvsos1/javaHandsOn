@@ -20,7 +20,7 @@ class HashMapQuizTest {
     @DisplayName("map에 key: grape, val: purple 추가")
     public void testPlusNewFruit () {
         // TODO
-        assertTrue();
+        assertTrue(map.containsKey("grape"));
     }
 
     @Test
