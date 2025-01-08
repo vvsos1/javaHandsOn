@@ -1,9 +1,10 @@
 package kr.codesquad;
 
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.assertj.core.api.Assertions.*;
 
 class StringQuizTest {
 
@@ -13,6 +14,8 @@ class StringQuizTest {
         String abc1 = "abc";
         String abc2 = new String("abc");
         // TODO 1 변수에 정의한 문자열과 new 를 통해 생성한 인스턴스가 같은 주소를 가리키는지 비교
+        assertThat(abc1.hashCode()).isEqualTo(abc2.hashCode());
+        assertThat(abc1 == abc2).isFalse();
     }
 
     @Test
@@ -20,6 +23,7 @@ class StringQuizTest {
     public void test_stringLongLong() throws Exception {
         String teacher = "Honux";
         // TODO 2 문자열 길이 구하기
+        assertThat(teacher.length()).isEqualTo(5);
     }
 
     @Test
@@ -28,6 +32,7 @@ class StringQuizTest {
         String teacher = "Crong";
         String frontend = "Hello";
         // TODO 3 문자열 합치기
+        assertThat(teacher + frontend).isEqualTo("CrongHello");
     }
 
     @Test
@@ -40,6 +45,10 @@ class StringQuizTest {
         // o
         // b
         // i
+        System.out.println(teacher.charAt(0));
+        System.out.println(teacher.charAt(1));
+        System.out.println(teacher.charAt(2));
+        System.out.println(teacher.charAt(3));
     }
 
     @Test
@@ -49,6 +58,12 @@ class StringQuizTest {
 
         // TODO 5 더하기 연산을 이용해 String을 거꾸로 출력하기
         // 결과: elgnaD
+        String reversed = "";
+        for(int i = teacher.length() - 1; i >= 0; i--) {
+            reversed +=  teacher.charAt(i);
+        }
+        System.out.println(reversed);
+
     }
 
 
@@ -60,5 +75,10 @@ class StringQuizTest {
 
         // TODO 6 StringBuilder를 이용해 String을 거꾸로 출력하기
         // 결과: olleZ
+        for(int i = 0; i < developer.length(); i++) {
+            sb.append(developer.charAt(i));
+        }
+        System.out.println(sb.reverse().toString());
+
     }
 }
