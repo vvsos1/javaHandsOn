@@ -18,7 +18,7 @@ public class ListQuiz {
         list.add('h');
     }
 
-    public List getList(){
+    public List<Character> getList(){
         return list;
     }
 }
